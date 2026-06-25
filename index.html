@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="page_title">غذاء وعافية | استعد صحتك وثقتك بنفسك</title>
+  <meta name="description" content="برنامج متكامل يساعدك على خسارة الوزن وتحسين صحتك من خلال المتابعة اليومية والدعم المستمر. بدون حرمان من الأكل المغربي." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#134e35',
+            primaryLight: '#1c6d4a',
+            gold: '#d4af37',
+            goldHover: '#c5a059',
+            dark: '#1a1a1a',
+            light: '#fbfbfb'
+          },
+          fontFamily: {
+            sans: ['Tajawal', 'sans-serif']
+          },
+          backgroundImage: {
+            'moroccan-pattern': "url('data:image/svg+xml,%3Csvg width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z%22 fill=%22%23d4af37%22 fill-opacity=%220.05%22 fill-rule=%22evenodd%22/%3E%3C/svg%3E')"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #fbfbfb;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #d4af37, #b89020);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .btn-whatsapp-float {
+      animation: pulse-wa 2s infinite;
+    }
+    .accordion-content {
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+      max-height: 0;
+      overflow: hidden;
+    }
+    .carousel-item {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .carousel-item.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Language Switcher Styling */
+    .lang-switcher {
+      position: fixed;
+      top: 1.5rem;
+      z-index: 100;
+    }
+    html[dir="rtl"] .lang-switcher { left: 1.5rem; }
+    html[dir="ltr"] .lang-switcher { right: 1.5rem; }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-white relative">
+
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <select id="langSelector" class="bg-white/90 backdrop-blur border-2 border-gold text-primary rounded-full px-4 py-2 font-bold shadow-lg outline-none cursor-pointer text-sm hover:bg-gold hover:text-white transition-colors">
+      <option value="ar" selected>العربية</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
+
+  <div class="fixed inset-0 bg-moroccan-pattern pointer-events-none z-[-1]"></div>
+  <section class="relative min-h-[90vh] flex items-center justify-center pt-10 pb-20 overflow-hidden bg-primary text-white">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=2070&q=80" alt="صحة ونشاط" class="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary"></div>
+    </div>
+    <div class="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+      <div class="mb-8 inline-block">
+        <span class="text-gold border border-gold px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase" data-i18n="hero_badge">غذاء وعافية</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-4xl" data-i18n="hero_title">
+        استعد صحتك وثقتك بنفسك مع <span class="text-gold">غذاء وعافية</span>
+      </h1>
+      <p class="text-lg md:text-2xl mb-10 max-w-3xl text-gray-200 leading-relaxed font-light" data-i18n="hero_desc">
+        برنامج متكامل يساعدك على خسارة الوزن وتحسين صحتك من خلال المتابعة اليومية، الدعم المستمر، ومجتمع يساعدك على النجاح.
+      </p>
+      <a href="#wa-form" class="inline-flex items-center justify-center bg-gold hover:bg-goldHover text-primary font-bold text-xl py-4 px-10 rounded-full shadow-xl shadow-gold/30 transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+        <i class="fab fa-whatsapp text-2xl ms-3"></i>
+        <span data-i18n="hero_btn">ابدأ الآن عبر واتساب</span>
+      </a>
+      <p class="mt-4 text-sm text-gray-300 flex items-center justify-center">
+        <i class="fas fa-lock ms-1"></i> <span data-i18n="hero_note">أحصل علي استشارتك</span>
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="fill-light"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-50.15V0Z" opacity=".5" class="fill-light"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="fill-light"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="py-20 bg-light">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-i18n="pain_title">هل هذا يصف حالتك الآن؟</h2>
+        <div class="h-1 w-24 bg-gold mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 group fade-up">
+          <div class="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gold transition-colors"><i class="fas fa-undo"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-3" data-i18n="pain1_t">محاولات فاشلة</h3>
+          <p class="text-gray-600" data-i18n="pain1_d">جربت أنظمة كثيرة، تخسر الوزن ثم تعود لاكتسابه من جديد لأنك لم تستطع الاستمرار.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 group fade-up">
+          <div class="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gold transition-colors"><i class="fas fa-battery-empty"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-3" data-i18n="pain2_t">تعب وخمول دائم</h3>
+          <p class="text-gray-600" data-i18n="pain2_d">تستيقظ متعباً، وتشعر بفقدان الطاقة في منتصف اليوم، مما يمنعك من ممارسة حياتك بمتعة.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 group fade-up">
+          <div class="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gold transition-colors"><i class="fas fa-heartbeat"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-3" data-i18n="pain3_t">خوف من المضاعفات</h3>
+          <p class="text-gray-600" data-i18n="pain3_d">قلق بشأن السكري، دهون الكبد، مقاومة الإنسولين، وتأثير الوزن الزائد على مستقبلك الصحي.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 group fade-up">
+          <div class="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gold transition-colors"><i class="fas fa-user-slash"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-3" data-i18n="pain4_t">فقدان الثقة بالنفس</h3>
+          <p class="text-gray-600" data-i18n="pain4_d">تتجنب المناسبات الاجتماعية، وتجد صعوبة في العثور على ملابس تناسبك وترضيك.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 group fade-up">
+          <div class="w-14 h-14 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gold transition-colors"><i class="fas fa-seedling"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-3" data-i18n="pain5_t">رغبة في التغيير</h3>
+          <p class="text-gray-600" data-i18n="pain5_d">تريد بصدق تحسين صحتك وحياتك، لكنك لا تعرف من أين تبدأ أو ما هو الطريق الصحيح.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 group fade-up">
+          <div class="w-14 h-14 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-gold transition-colors"><i class="fas fa-hands-helping"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-3" data-i18n="pain6_t">تحتاج إلى دعم</h3>
+          <p class="text-gray-600" data-i18n="pain6_d">تعلم أنك تستطيع النجاح إذا وجدت من يوجهك يومياً، ويصحح أخطاءك، ويدعمك نفسياً.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-6 max-w-4xl text-center fade-up relative z-10">
+      <i class="fas fa-quote-right rtl:fa-quote-right ltr:fa-quote-left text-4xl text-gold/50 mb-6"></i>
+      <h2 class="text-3xl md:text-5xl font-bold text-primary mb-8 leading-tight" data-i18n="quote_title">
+        أنت لا تحتاج إلى <span class="text-red-500 line-through decoration-2">رجيم جديد</span>.<br />
+        أنت تحتاج إلى <span class="text-gradient">نظام يساعدك على الاستمرار</span>.
+      </h2>
+      <p class="text-xl text-gray-600 leading-relaxed mb-6" data-i18n="quote_p1">
+        لماذا تفشل معظم محاولات خسارة الوزن؟ المشكلة ليست أنك لا تعرف ماذا تأكل، أو أن إرادتك ضعيفة.
+      </p>
+      <p class="text-2xl text-dark font-bold mb-10 border-e-4 border-gold pe-6 inline-block text-start w-full md:w-auto" data-i18n="quote_p2">
+        المشكلة الحقيقية هي أنك تحاول <span class="text-primary">وحدك</span> في بيئة لا تدعمك.
+      </p>
+      <p class="text-lg text-gray-600 leading-relaxed mb-10" data-i18n="quote_p3">
+        ولهذا السبب تحديداً أسسنا <strong class="text-primary">غذاء وعافية</strong>. لنوفر لك البيئة، الخطة، والدعم اليومي الذي يساعدك على الوصول لهدفك وعدم العودة للوراء.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-light">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-i18n="how_title">كيف يعمل برنامج غذاء وعافية؟</h2>
+        <div class="h-1 w-24 bg-gold mx-auto rounded-full mb-6"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-up">
+          <div class="absolute -top-5 -end-5 w-12 h-12 bg-gold text-white font-bold text-xl rounded-full flex items-center justify-center border-4 border-white shadow-md">1</div>
+          <div class="text-primary text-4xl mb-4"><i class="fas fa-clipboard-list"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-2" data-i18n="how1_t">تقييم الحالة</h3>
+          <p class="text-gray-600 text-sm" data-i18n="how1_d">ندرس وضعك الصحي، أهدافك، وطبيعة حياتك اليومية بدقة تامة.</p>
+        </div>
+        <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-up">
+          <div class="absolute -top-5 -end-5 w-12 h-12 bg-gold text-white font-bold text-xl rounded-full flex items-center justify-center border-4 border-white shadow-md">2</div>
+          <div class="text-primary text-4xl mb-4"><i class="fas fa-utensils"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-2" data-i18n="how2_t">خطة مناسبة لك</h3>
+          <p class="text-gray-600 text-sm" data-i18n="how2_d">نصمم لك نظاماً غذائياً يدمج الأكل المغربي الذي تحبه بدون حرمان قاسي.</p>
+        </div>
+        <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-up">
+          <div class="absolute -top-5 -end-5 w-12 h-12 bg-gold text-white font-bold text-xl rounded-full flex items-center justify-center border-4 border-white shadow-md">3</div>
+          <div class="text-primary text-4xl mb-4"><i class="fas fa-comments"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-2" data-i18n="how3_t">متابعة يومية</h3>
+          <p class="text-gray-600 text-sm" data-i18n="how3_d">تواصل يومي عبر الواتساب لتصحيح الأخطاء، الإجابة على الأسئلة، والتحفيز.</p>
+        </div>
+        <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-up">
+          <div class="absolute -top-5 -end-5 w-12 h-12 bg-gold text-white font-bold text-xl rounded-full flex items-center justify-center border-4 border-white shadow-md">4</div>
+          <div class="text-primary text-4xl mb-4"><i class="fas fa-users"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-2" data-i18n="how4_t">مجتمع داعم</h3>
+          <p class="text-gray-600 text-sm" data-i18n="how4_d">انضمام لمجموعة تضم أشخاصاً يمرون بنفس تجربتك لتبادل الخبرات.</p>
+        </div>
+        <div class="relative bg-white p-8 rounded-2xl shadow-sm border border-gray-100 fade-up">
+          <div class="absolute -top-5 -end-5 w-12 h-12 bg-gold text-white font-bold text-xl rounded-full flex items-center justify-center border-4 border-white shadow-md">5</div>
+          <div class="text-primary text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
+          <h3 class="text-xl font-bold text-dark mb-2" data-i18n="how5_t">قياس التقدم</h3>
+          <p class="text-gray-600 text-sm" data-i18n="how5_d">تحديثات أسبوعية للقياسات وتعديل الخطة بناءً على استجابة جسمك.</p>
+        </div>
+        <div class="relative bg-primary text-white p-8 rounded-2xl shadow-xl fade-up">
+          <div class="absolute -top-5 -end-5 w-12 h-12 bg-gold text-white font-bold text-xl rounded-full flex items-center justify-center border-4 border-primary shadow-md">6</div>
+          <div class="text-gold text-4xl mb-4"><i class="fas fa-trophy"></i></div>
+          <h3 class="text-xl font-bold mb-2" data-i18n="how6_t">نتائج مستدامة</h3>
+          <p class="text-gray-200 text-sm" data-i18n="how6_d">تعلم أسلوب حياة يساعدك على الحفاظ على صحتك ونشاطك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-primary text-white relative">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="success_title">قصص نجاح من الواقع</h2>
+        <div class="h-1 w-24 bg-gold mx-auto rounded-full mb-6"></div>
+        <p class="text-gray-300 text-lg" data-i18n="success_desc">استمع لتجارب حقيقية لأشخاص غيروا حياتهم الصحية معنا</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-primaryLight rounded-2xl overflow-hidden shadow-2xl fade-up">
+          <div class="aspect-video bg-gray-900 relative flex items-center justify-center">
+            <p class="text-gray-400 absolute">VIDEO_LINK_1</p>
+            <i class="fab fa-youtube text-5xl text-red-600 opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-bold text-xl text-gold" data-i18n="story1_name">فاطمة الزهراء</h3>
+              <span class="bg-white/10 text-sm px-3 py-1 rounded-full" data-i18n="story1_city">الدار البيضاء</span>
+            </div>
+            <div class="flex gap-4 text-sm bg-black/20 p-3 rounded-lg">
+              <div class="flex-1 text-center border-s border-white/10">
+                <span class="block text-gray-400 text-xs" data-i18n="before">الحالة قبل</span>
+                <span class="font-bold" data-i18n="story1_before">خمول ومقاومة إنسولين</span>
+              </div>
+              <div class="flex-1 text-center">
+                <span class="block text-gray-400 text-xs" data-i18n="after">النتيجة بعد</span>
+                <span class="font-bold text-green-400" data-i18n="story1_after">صحة ممتازة ونشاط</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-primaryLight rounded-2xl overflow-hidden shadow-2xl fade-up">
+          <div class="aspect-video bg-gray-900 relative flex items-center justify-center">
+            <p class="text-gray-400 absolute">VIDEO_LINK_2</p>
+            <i class="fab fa-youtube text-5xl text-red-600 opacity-90"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-bold text-xl text-gold" data-i18n="story2_name">أحمد</h3>
+              <span class="bg-white/10 text-sm px-3 py-1 rounded-full" data-i18n="story2_city">الرباط</span>
+            </div>
+            <div class="flex gap-4 text-sm bg-black/20 p-3 rounded-lg">
+              <div class="flex-1 text-center border-s border-white/10">
+                <span class="block text-gray-400 text-xs" data-i18n="before">الحالة قبل</span>
+                <span class="font-bold" data-i18n="story2_before">سمنة وصعوبة في الحركة</span>
+              </div>
+              <div class="flex-1 text-center">
+                <span class="block text-gray-400 text-xs" data-i18n="after">النتيجة بعد</span>
+                <span class="font-bold text-green-400" data-i18n="story2_after">لياقة وثقة بالنفس</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-5xl font-bold text-primary mb-4" data-i18n="transform_title">تحولات صحية مذهلة</h2>
+        <div class="h-1 w-24 bg-gold mx-auto rounded-full mb-6"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-light rounded-3xl overflow-hidden shadow-md border border-gray-100 fade-up p-8 text-center hover:border-gold/50 transition-colors">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary text-4xl mx-auto mb-6">
+            <i class="fas fa-child"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3" data-i18n="trans1_t">استعادة الثقة والنشاط</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4" data-i18n="trans1_d">بعد معاناة طويلة مع الخمول والشعور بالتعب المستمر، أصبحت الحركة جزءاً من يومها واستعادت ثقتها بنفسها.</p>
+          <div class="text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <div class="bg-light rounded-3xl overflow-hidden shadow-md border border-gray-100 fade-up p-8 text-center hover:border-gold/50 transition-colors">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary text-4xl mx-auto mb-6">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3" data-i18n="trans2_t">التخلص من مقاومة الإنسولين</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4" data-i18n="trans2_d">تغيير جذري في نمط الحياة، تحسنت العادات الغذائية، وتحسنت المؤشرات الصحية بشكل ملحوظ.</p>
+          <div class="text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+        <div class="bg-light rounded-3xl overflow-hidden shadow-md border border-gray-100 fade-up p-8 text-center hover:border-gold/50 transition-colors">
+          <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary text-4xl mx-auto mb-6">
+            <i class="fas fa-running"></i>
+          </div>
+          <h3 class="font-bold text-xl text-dark mb-3" data-i18n="trans3_t">حيوية ولياقة عالية</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4" data-i18n="trans3_d">رحلة نجاح تكللت بتقليل مشاكل السمنة المزعجة وعودة الحيوية والطاقة للمهام اليومية.</p>
+          <div class="text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-primaryLight text-white relative">
+    <div class="container mx-auto px-6 max-w-6xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 fade-up" data-i18n="why_us">لماذا يختارنا الجميع؟</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-primary rounded-xl border border-white/10 fade-up"><i class="fas fa-user-md text-3xl text-gold mb-3"></i><h4 class="font-bold" data-i18n="feat1">خبرة طويلة</h4></div>
+        <div class="p-6 bg-primary rounded-xl border border-white/10 fade-up"><i class="fas fa-mobile-alt text-3xl text-gold mb-3"></i><h4 class="font-bold" data-i18n="feat2">متابعة يومية</h4></div>
+        <div class="p-6 bg-primary rounded-xl border border-white/10 fade-up"><i class="fas fa-users text-3xl text-gold mb-3"></i><h4 class="font-bold" data-i18n="feat3">مجتمع داعم</h4></div>
+        <div class="p-6 bg-primary rounded-xl border border-white/10 fade-up"><i class="fas fa-headset text-3xl text-gold mb-3"></i><h4 class="font-bold" data-i18n="feat4">دعم مستمر</h4></div>
+        <div class="p-6 bg-primary rounded-xl border border-white/10 fade-up"><i class="fas fa-certificate text-3xl text-gold mb-3"></i><h4 class="font-bold" data-i18n="feat5">قصص نجاح</h4></div>
+        <div class="p-6 bg-primary rounded-xl border border-white/10 fade-up"><i class="fas fa-leaf text-3xl text-gold mb-3"></i><h4 class="font-bold" data-i18n="feat6">حلول تناسبك</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white relative">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2 fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight" data-i18n="food_title">
+            لن نطلب منك التخلي عن <span class="text-gold border-b-2 border-gold">الأكل المغربي</span> الأصيل
+          </h2>
+          <p class="text-xl text-gray-600 mb-6" data-i18n="food_p1">
+            السر ليس في الحرمان، بل في معرفة كيف ومتى تتناول أطباقك المفضلة.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 ms-3 text-xl"></i>
+              <div>
+                <strong class="block text-dark" data-i18n="food_i1_t">الطاجين، زعلوك، مشاوي</strong>
+                <span class="text-gray-600 text-sm" data-i18n="food_i1_d">سنعلمك كيف تتناولها بالكميات والطرق الصحية.</span>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-green-500 mt-1 ms-3 text-xl"></i>
+              <div>
+                <strong class="block text-dark" data-i18n="food_i2_t">الفطور المغربي</strong>
+                <span class="text-gray-600 text-sm" data-i18n="food_i2_d">بدائل ذكية لتستمتع بصباحك الصحي.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-1/2 grid grid-cols-2 gap-4 fade-up">
+          <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=600&q=80" alt="طاجين مغربي" class="rounded-xl shadow-md w-full h-48 object-cover" />
+          <img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=600&q=80" alt="سمك" class="rounded-xl shadow-md w-full h-48 object-cover mt-8" />
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="سلطة" class="rounded-xl shadow-md w-full h-48 object-cover -mt-8" />
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" alt="فطور صحي" class="rounded-xl shadow-md w-full h-48 object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-light border-y border-gray-200">
+    <div class="container mx-auto px-6 max-w-4xl text-center relative fade-up">
+      <i class="fas fa-quote-right rtl:fa-quote-right ltr:fa-quote-left text-4xl text-gold/30 mb-4"></i>
+      <div id="testimonials" class="relative min-h-[150px]">
+        <div class="carousel-item active">
+          <p class="text-xl md:text-2xl text-gray-700 italic mb-6 leading-relaxed" data-i18n="test1_d">"لم أكن أتخيل أنني سأتمكن من تغيير حياتي بهذا الشكل دون أن أشعر بالجوع. الدعم اليومي كان هو الفارق الحقيقي بالنسبة لي."</p>
+          <h4 class="font-bold text-primary text-lg" data-i18n="test1_n">سناء - مراكش</h4>
+        </div>
+        <div class="carousel-item">
+          <p class="text-xl md:text-2xl text-gray-700 italic mb-6 leading-relaxed" data-i18n="test2_d">"كنت أعاني من التعب المستمر بسبب مقاومة الإنسولين. مع غذاء وعافية، استعدت نشاطي بالكامل والحمد لله."</p>
+          <h4 class="font-bold text-primary text-lg" data-i18n="test2_n">ياسين - طنجة</h4>
+        </div>
+      </div>
+      <div class="flex justify-center gap-2 mt-8">
+        <button type="button" onclick="nextTestimonial()" class="w-10 h-10 rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gold hover:text-white hover:border-gold transition-colors"><i class="fas fa-chevron-right ltr:rotate-180"></i></button>
+        <button type="button" onclick="nextTestimonial()" class="w-10 h-10 rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gold hover:text-white hover:border-gold transition-colors"><i class="fas fa-chevron-left ltr:rotate-180"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-i18n="faq_title">الأسئلة الشائعة</h2>
+        <div class="h-1 w-24 bg-gold mx-auto rounded-full"></div>
+      </div>
+      <div class="space-y-4 fade-up">
+        <div class="border border-gray-200 rounded-xl overflow-hidden bg-light">
+          <button type="button" class="faq-btn w-full px-6 py-4 flex justify-between items-center focus:outline-none text-start">
+            <span class="font-bold text-lg text-dark" data-i18n="q1">هل سأشعر بالجوع؟</span>
+            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-white">
+            <p class="px-6 pb-4 text-gray-600 text-start" data-i18n="a1">البرنامج مصمم ليقدم وجبات مشبعة ومغذية تناسب حالتك.</p>
+          </div>
+        </div>
+        <div class="border border-gray-200 rounded-xl overflow-hidden bg-light">
+          <button type="button" class="faq-btn w-full px-6 py-4 flex justify-between items-center focus:outline-none text-start">
+            <span class="font-bold text-lg text-dark" data-i18n="q2">هل يناسب مرضى السكري؟</span>
+            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-white">
+            <p class="px-6 pb-4 text-gray-600 text-start" data-i18n="a2">يتم التعامل مع كل حالة حسب وضعها الصحي، ويجب استشارة الطبيب عند وجود سكري أو أدوية مستمرة.</p>
+          </div>
+        </div>
+        <div class="border border-gray-200 rounded-xl overflow-hidden bg-light">
+          <button type="button" class="faq-btn w-full px-6 py-4 flex justify-between items-center focus:outline-none text-start">
+            <span class="font-bold text-lg text-dark" data-i18n="q3">هل يناسب الرجال والنساء؟</span>
+            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-white">
+            <p class="px-6 pb-4 text-gray-600 text-start" data-i18n="a3">نعم، يتم تفصيل الخطة لتناسب طبيعة كل جسم وهدف كل شخص.</p>
+          </div>
+        </div>
+        <div class="border border-gray-200 rounded-xl overflow-hidden bg-light">
+          <button type="button" class="faq-btn w-full px-6 py-4 flex justify-between items-center focus:outline-none text-start">
+            <span class="font-bold text-lg text-dark" data-i18n="q4">هل توجد متابعة يومية؟</span>
+            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-white">
+            <p class="px-6 pb-4 text-gray-600 text-start" data-i18n="a4">نعم، نتواصل معك يومياً عبر الواتساب للتوجيه والإجابة على الاستفسارات.</p>
+          </div>
+        </div>
+        <div class="border border-gray-200 rounded-xl overflow-hidden bg-light">
+          <button type="button" class="faq-btn w-full px-6 py-4 flex justify-between items-center focus:outline-none text-start">
+            <span class="font-bold text-lg text-dark" data-i18n="q5">هل يوجد مجتمع دعم؟</span>
+            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-white">
+            <p class="px-6 pb-4 text-gray-600 text-start" data-i18n="a5">نعم، ستنضم لمجموعة مخصصة للمشتركين لتبادل التشجيع والخبرات.</p>
+          </div>
+        </div>
+        <div class="border border-gray-200 rounded-xl overflow-hidden bg-light">
+          <button type="button" class="faq-btn w-full px-6 py-4 flex justify-between items-center focus:outline-none text-start">
+            <span class="font-bold text-lg text-dark" data-i18n="q6">كيف أبدأ؟</span>
+            <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+          </button>
+          <div class="accordion-content bg-white">
+            <p class="px-6 pb-4 text-gray-600 text-start" data-i18n="a6">قم بتعبئة النموذج بالأسفل وسيتم تحويلك للواتساب للتواصل معنا.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wa-form" class="py-20 bg-primary relative overflow-hidden text-start">
+    <div class="absolute inset-0 bg-moroccan-pattern opacity-10 pointer-events-none"></div>
+    <div class="container mx-auto px-6 max-w-4xl relative z-10">
+      <div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl fade-up">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-i18n="form_title">خطوتك الأولى نحو التغيير</h2>
+          <p class="text-gray-600" data-i18n="form_desc">أدخل بياناتك الأساسية وسنتواصل معك لتقييم حالتك.</p>
+        </div>
+        <form id="leadForm" class="space-y-6 text-start">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-primary mb-2 text-start" for="wa-name" data-i18n="lbl_name">الاسم الكريم</label>
+              <input type="text" id="wa-name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold outline-none bg-white text-dark text-start" />
+            </div>
+            <div>
+              <!-- تم تغيير نوع الحقل إلى text وإضافة inputmode لضمان قبول الأرقام بجميع اللغات -->
+              <label class="block text-sm font-bold text-primary mb-2 text-start" for="wa-age" data-i18n="lbl_age">العمر</label>
+              <input type="text" inputmode="numeric" id="wa-age" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold outline-none bg-white text-dark text-start" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-primary mb-2 text-start" for="wa-city" data-i18n="lbl_city">المدينة</label>
+              <input type="text" id="wa-city" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold outline-none bg-white text-dark text-start" />
+            </div>
+            <div>
+              <!-- تم تغيير نوع الحقل إلى text وإضافة inputmode لضمان قبول الأرقام بجميع اللغات -->
+              <label class="block text-sm font-bold text-primary mb-2 text-start" for="wa-weight" data-i18n="lbl_weight">الوزن الحالي</label>
+              <input type="text" inputmode="numeric" id="wa-weight" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold outline-none bg-white text-dark text-start" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-primary mb-2 text-start" for="wa-goal" data-i18n="lbl_goal">ما هو هدفك الرئيسي؟</label>
+            <select id="wa-goal" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold outline-none bg-white text-dark text-start">
+              <option value="" disabled selected data-i18n="opt_goal_0">اختر هدفك...</option>
+              <option value="opt_goal_1" data-i18n="opt_goal_1">تحسين الصحة العامة والنشاط</option>
+              <option value="opt_goal_2" data-i18n="opt_goal_2">التخلص من السمنة</option>
+              <option value="opt_goal_3" data-i18n="opt_goal_3">تعلم أسلوب حياة صحي</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-primary mb-2 text-start" for="wa-health" data-i18n="lbl_health">هل تعاني من أي مشاكل صحية؟</label>
+            <select id="wa-health" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold outline-none bg-white text-dark text-start">
+              <option value="" disabled selected data-i18n="opt_health_0">اختر الحالة...</option>
+              <option value="opt_health_1" data-i18n="opt_health_1">لا، صحتي جيدة والحمد لله</option>
+              <option value="opt_health_2" data-i18n="opt_health_2">مقاومة إنسولين / سكري</option>
+              <option value="opt_health_3" data-i18n="opt_health_3">دهون على الكبد</option>
+              <option value="opt_health_4" data-i18n="opt_health_4">أمراض أخرى</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold text-xl py-5 rounded-xl shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center mt-8">
+            <i class="fab fa-whatsapp text-3xl ms-3"></i>
+            <span data-i18n="btn_submit">أرسل بياناتك الآن</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-dark text-white text-center relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10 fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta_title">قرارك اليوم قد يغير حياتك لسنوات</h2>
+      <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto" data-i18n="cta_desc">
+        لا تؤجل صحتك. كل يوم يمر هو فرصة ضائعة لتشعر بطاقة أكبر وصحة أفضل. فريقنا بانتظارك.
+      </p>
+      <a href="#wa-form" class="inline-flex items-center justify-center bg-gold hover:bg-goldHover text-primary font-bold text-xl py-4 px-12 rounded-full shadow-2xl transition-all transform hover:scale-105" data-i18n="cta_btn">
+        تواصل معنا الآن
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-black text-gray-500 py-8 text-center text-sm border-t border-gray-800">
+    <div class="container mx-auto px-6">
+      <p data-i18n="footer_rights">&copy; 2026 غذاء وعافية. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <a href="#wa-form" class="fixed bottom-6 end-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl btn-whatsapp-float hover:scale-110 transition-transform">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JavaScript for Translations and Logic -->
+  <script>
+    const translations = {
+      ar: {
+        page_title: "غذاء وعافية | استعد صحتك وثقتك بنفسك",
+        hero_badge: "غذاء وعافية",
+        hero_title: "استعد صحتك وثقتك بنفسك مع <span class='text-gold'>غذاء وعافية</span>",
+        hero_desc: "برنامج متكامل يساعدك على خسارة الوزن وتحسين صحتك من خلال المتابعة اليومية، الدعم المستمر، ومجتمع يساعدك على النجاح.",
+        hero_btn: "ابدأ الآن عبر واتساب",
+        hero_note: "أحصل علي استشارتك",
+        pain_title: "هل هذا يصف حالتك الآن؟",
+        pain1_t: "محاولات فاشلة",
+        pain1_d: "جربت أنظمة كثيرة، تخسر الوزن ثم تعود لاكتسابه من جديد لأنك لم تستطع الاستمرار.",
+        pain2_t: "تعب وخمول دائم",
+        pain2_d: "تستيقظ متعباً، وتشعر بفقدان الطاقة في منتصف اليوم، مما يمنعك من ممارسة حياتك بمتعة.",
+        pain3_t: "خوف من المضاعفات",
+        pain3_d: "قلق بشأن السكري، دهون الكبد، مقاومة الإنسولين، وتأثير الوزن الزائد على مستقبلك الصحي.",
+        pain4_t: "فقدان الثقة بالنفس",
+        pain4_d: "تتجنب المناسبات الاجتماعية، وتجد صعوبة في العثور على ملابس تناسبك وترضيك.",
+        pain5_t: "رغبة في التغيير",
+        pain5_d: "تريد بصدق تحسين صحتك وحياتك، لكنك لا تعرف من أين تبدأ أو ما هو الطريق الصحيح.",
+        pain6_t: "تحتاج إلى دعم",
+        pain6_d: "تعلم أنك تستطيع النجاح إذا وجدت من يوجهك يومياً، ويصحح أخطاءك، ويدعمك نفسياً.",
+        quote_title: "أنت لا تحتاج إلى <span class='text-red-500 line-through decoration-2'>رجيم جديد</span>.<br />أنت تحتاج إلى <span class='text-gradient'>نظام يساعدك على الاستمرار</span>.",
+        quote_p1: "لماذا تفشل معظم محاولات خسارة الوزن؟ المشكلة ليست أنك لا تعرف ماذا تأكل، أو أن إرادتك ضعيفة.",
+        quote_p2: "المشكلة الحقيقية هي أنك تحاول <span class='text-primary'>وحدك</span> في بيئة لا تدعمك.",
+        quote_p3: "ولهذا السبب تحديداً أسسنا <strong class='text-primary'>غذاء وعافية</strong>. لنوفر لك البيئة، الخطة، والدعم اليومي الذي يساعدك على الوصول لهدفك وعدم العودة للوراء.",
+        how_title: "كيف يعمل برنامج غذاء وعافية؟",
+        how1_t: "تقييم الحالة",
+        how1_d: "ندرس وضعك الصحي، أهدافك، وطبيعة حياتك اليومية بدقة تامة.",
+        how2_t: "خطة مناسبة لك",
+        how2_d: "نصمم لك نظاماً غذائياً يدمج الأكل المغربي الذي تحبه بدون حرمان قاسي.",
+        how3_t: "متابعة يومية",
+        how3_d: "تواصل يومي عبر الواتساب لتصحيح الأخطاء، الإجابة على الأسئلة، والتحفيز.",
+        how4_t: "مجتمع داعم",
+        how4_d: "انضمام لمجموعة تضم أشخاصاً يمرون بنفس تجربتك لتبادل الخبرات.",
+        how5_t: "قياس التقدم",
+        how5_d: "تحديثات أسبوعية للقياسات وتعديل الخطة بناءً على استجابة جسمك.",
+        how6_t: "نتائج مستدامة",
+        how6_d: "تعلم أسلوب حياة يساعدك على الحفاظ على صحتك ونشاطك.",
+        success_title: "قصص نجاح من الواقع",
+        success_desc: "استمع لتجارب حقيقية لأشخاص غيروا حياتهم الصحية معنا",
+        story1_name: "فاطمة الزهراء",
+        story1_city: "الدار البيضاء",
+        before: "الحالة قبل",
+        after: "النتيجة بعد",
+        story1_before: "خمول ومقاومة إنسولين",
+        story1_after: "صحة ممتازة ونشاط",
+        story2_name: "أحمد",
+        story2_city: "الرباط",
+        story2_before: "سمنة وصعوبة في الحركة",
+        story2_after: "لياقة وثقة بالنفس",
+        transform_title: "تحولات صحية مذهلة",
+        trans1_t: "استعادة الثقة والنشاط",
+        trans1_d: "بعد معاناة طويلة مع الخمول والشعور بالتعب المستمر، أصبحت الحركة جزءاً من يومها واستعادت ثقتها بنفسها.",
+        trans2_t: "التخلص من مقاومة الإنسولين",
+        trans2_d: "تغيير جذري في نمط الحياة، تحسنت العادات الغذائية، وتحسنت المؤشرات الصحية بشكل ملحوظ.",
+        trans3_t: "حيوية ولياقة عالية",
+        trans3_d: "رحلة نجاح تكللت بتقليل مشاكل السمنة المزعجة وعودة الحيوية والطاقة للمهام اليومية.",
+        why_us: "لماذا يختارنا الجميع؟",
+        feat1: "خبرة طويلة",
+        feat2: "متابعة يومية",
+        feat3: "مجتمع داعم",
+        feat4: "دعم مستمر",
+        feat5: "قصص نجاح",
+        feat6: "حلول تناسبك",
+        food_title: "لن نطلب منك التخلي عن <span class='text-gold border-b-2 border-gold'>الأكل المغربي</span> الأصيل",
+        food_p1: "السر ليس في الحرمان، بل في معرفة كيف ومتى تتناول أطباقك المفضلة.",
+        food_i1_t: "الطاجين، زعلوك، مشاوي",
+        food_i1_d: "سنعلمك كيف تتناولها بالكميات والطرق الصحية.",
+        food_i2_t: "الفطور المغربي",
+        food_i2_d: "بدائل ذكية لتستمتع بصباحك الصحي.",
+        test1_d: "\"لم أكن أتخيل أنني سأتمكن من تغيير حياتي بهذا الشكل دون أن أشعر بالجوع. الدعم اليومي كان هو الفارق الحقيقي بالنسبة لي.\"",
+        test1_n: "سناء - مراكش",
+        test2_d: "\"كنت أعاني من التعب المستمر بسبب مقاومة الإنسولين. مع غذاء وعافية، استعدت نشاطي بالكامل والحمد لله.\"",
+        test2_n: "ياسين - طنجة",
+        faq_title: "الأسئلة الشائعة",
+        q1: "هل سأشعر بالجوع؟",
+        a1: "البرنامج مصمم ليقدم وجبات مشبعة ومغذية تناسب حالتك.",
+        q2: "هل يناسب مرضى السكري؟",
+        a2: "يتم التعامل مع كل حالة حسب وضعها الصحي، ويجب استشارة الطبيب عند وجود سكري أو أدوية مستمرة.",
+        q3: "هل يناسب الرجال والنساء؟",
+        a3: "نعم، يتم تفصيل الخطة لتناسب طبيعة كل جسم وهدف كل شخص.",
+        q4: "هل توجد متابعة يومية؟",
+        a4: "نعم، نتواصل معك يومياً عبر الواتساب للتوجيه والإجابة على الاستفسارات.",
+        q5: "هل يوجد مجتمع دعم؟",
+        a5: "نعم، ستنضم لمجموعة مخصصة للمشتركين لتبادل التشجيع والخبرات.",
+        q6: "كيف أبدأ؟",
+        a6: "قم بتعبئة النموذج بالأسفل وسيتم تحويلك للواتساب للتواصل معنا.",
+        form_title: "خطوتك الأولى نحو التغيير",
+        form_desc: "أدخل بياناتك الأساسية وسنتواصل معك لتقييم حالتك.",
+        lbl_name: "الاسم الكريم",
+        lbl_age: "العمر",
+        lbl_city: "المدينة",
+        lbl_weight: "الوزن الحالي",
+        lbl_goal: "ما هو هدفك الرئيسي؟",
+        opt_goal_0: "اختر هدفك...",
+        opt_goal_1: "تحسين الصحة العامة والنشاط",
+        opt_goal_2: "التخلص من السمنة",
+        opt_goal_3: "تعلم أسلوب حياة صحي",
+        lbl_health: "هل تعاني من أي مشاكل صحية؟",
+        opt_health_0: "اختر الحالة...",
+        opt_health_1: "لا، صحتي جيدة والحمد لله",
+        opt_health_2: "مقاومة إنسولين / سكري",
+        opt_health_3: "دهون على الكبد",
+        opt_health_4: "أمراض أخرى",
+        btn_submit: "أرسل بياناتك الآن",
+        cta_title: "قرارك اليوم قد يغير حياتك لسنوات",
+        cta_desc: "لا تؤجل صحتك. كل يوم يمر هو فرصة ضائعة لتشعر بطاقة أكبر وصحة أفضل. فريقنا بانتظارك.",
+        cta_btn: "تواصل معنا الآن",
+        footer_rights: "© 2026 غذاء وعافية. جميع الحقوق محفوظة.",
+        wa_template: `مرحباً فريق غذاء وعافية، أريد تقييم حالتي للانضمام للبرنامج.\nالبيانات:\n👤 الاسم: {name}\n📅 العمر: {age} سنة\n📍 المدينة: {city}\n⚖️ الوزن: {weight} كجم\n🎯 الهدف: {goal}\n🩺 الحالة الصحية: {health}\nأنتظر ردكم، شكراً.`
+      },
+      en: {
+        page_title: "Food & Wellness | Regain Your Health & Confidence",
+        hero_badge: "Food & Wellness",
+        hero_title: "Regain your health and confidence with <span class='text-gold'>Food & Wellness</span>",
+        hero_desc: "An integrated program to help you lose weight and improve health through daily follow-ups, continuous support, and a community for success.",
+        hero_btn: "Start Now via WhatsApp",
+        hero_note: "Get your consultation",
+        pain_title: "Does this describe you right now?",
+        pain1_t: "Failed Attempts",
+        pain1_d: "Tried many diets, lost weight, then gained it back because you couldn't keep up.",
+        pain2_t: "Constant Fatigue",
+        pain2_d: "Waking up tired, losing energy mid-day, preventing you from enjoying life.",
+        pain3_t: "Fear of Complications",
+        pain3_d: "Worried about diabetes, fatty liver, insulin resistance, and the impact of weight.",
+        pain4_t: "Loss of Confidence",
+        pain4_d: "Avoiding social events and struggling to find clothes that fit and please you.",
+        pain5_t: "Desire for Change",
+        pain5_d: "Truly wanting to improve your health, but not knowing where or how to start.",
+        pain6_t: "Need for Support",
+        pain6_d: "Knowing you can succeed if someone guides you daily, corrects mistakes, and supports you.",
+        quote_title: "You don't need a <span class='text-red-500 line-through decoration-2'>new diet</span>.<br />You need a <span class='text-gradient'>system that helps you continue</span>.",
+        quote_p1: "Why do most weight loss attempts fail? The problem isn't your lack of knowledge or weak willpower.",
+        quote_p2: "The real problem is trying <span class='text-primary'>alone</span> in an unsupportive environment.",
+        quote_p3: "That's exactly why we founded <strong class='text-primary'>Food & Wellness</strong>. To provide you with the environment, plan, and daily support to reach your goal and never go back.",
+        how_title: "How does Food & Wellness work?",
+        how1_t: "Assessment",
+        how1_d: "We study your health condition, goals, and daily lifestyle with total accuracy.",
+        how2_t: "Custom Plan",
+        how2_d: "We design a diet combining Moroccan food you love without harsh deprivation.",
+        how3_t: "Daily Follow-up",
+        how3_d: "Daily communication via WhatsApp to correct errors, answer questions, and motivate.",
+        how4_t: "Supportive Community",
+        how4_d: "Join a group of people going through the same experience to share expertise.",
+        how5_t: "Progress Tracking",
+        how5_d: "Weekly updates for measurements and plan adjustments based on your body.",
+        how6_t: "Sustainable Results",
+        how6_d: "Learn a lifestyle that helps you maintain your health and vitality forever.",
+        success_title: "Real Life Success Stories",
+        success_desc: "Listen to real experiences of people who changed their healthy lives with us",
+        story1_name: "Fatima Ezzahra",
+        story1_city: "Casablanca",
+        before: "Before",
+        after: "After",
+        story1_before: "Lethargy & Insulin Resistance",
+        story1_after: "Excellent Health & Activity",
+        story2_name: "Ahmed",
+        story2_city: "Rabat",
+        story2_before: "Obesity & Mobility Issues",
+        story2_after: "Fitness & Self-Confidence",
+        transform_title: "Amazing Health Transformations",
+        trans1_t: "Regained Confidence & Energy",
+        trans1_d: "After suffering from lethargy, movement became part of her day and she regained her confidence.",
+        trans2_t: "Overcame Insulin Resistance",
+        trans2_d: "A radical lifestyle change, improved dietary habits, and significantly better health markers.",
+        trans3_t: "High Vitality & Fitness",
+        trans3_d: "A success journey crowned by reducing annoying obesity problems and returning vitality.",
+        why_us: "Why does everyone choose us?",
+        feat1: "Long Experience",
+        feat2: "Daily Follow-up",
+        feat3: "Support Community",
+        feat4: "Continuous Support",
+        feat5: "Success Stories",
+        feat6: "Tailored Solutions",
+        food_title: "We won't ask you to give up authentic <span class='text-gold border-b-2 border-gold'>Moroccan Food</span>",
+        food_p1: "The secret is not deprivation, but knowing how and when to eat your favorite dishes.",
+        food_i1_t: "Tagine, Zaalouk, Grills",
+        food_i1_d: "We will teach you how to eat them in healthy ways and portions.",
+        food_i2_t: "Moroccan Breakfast",
+        food_i2_d: "Smart alternatives to enjoy your healthy morning.",
+        test1_d: "\"I never imagined I could change my life like this without feeling hungry. The daily support was the real difference for me.\"",
+        test1_n: "Sanaa - Marrakech",
+        test2_d: "\"I was suffering from constant fatigue due to insulin resistance. With Food & Wellness, I regained my full energy, thank God.\"",
+        test2_n: "Yassine - Tangier",
+        faq_title: "Frequently Asked Questions",
+        q1: "Will I feel hungry?",
+        a1: "The program is designed to provide fulfilling and nutritious meals tailored to you.",
+        q2: "Is it suitable for diabetics?",
+        a2: "Each case is handled according to its health status. A doctor should be consulted for diabetes or ongoing medications.",
+        q3: "Is it suitable for men and women?",
+        a3: "Yes, the plan is customized to suit the nature of each body and person's goal.",
+        q4: "Is there daily follow-up?",
+        a4: "Yes, we communicate with you daily via WhatsApp for guidance and answering queries.",
+        q5: "Is there a support community?",
+        a5: "Yes, you will join a dedicated group for subscribers to exchange encouragement.",
+        q6: "How do I start?",
+        a6: "Fill out the form below and you will be redirected to WhatsApp to contact us.",
+        form_title: "Your First Step Towards Change",
+        form_desc: "Enter your basic details and we will contact you to evaluate your case.",
+        lbl_name: "Full Name",
+        lbl_age: "Age",
+        lbl_city: "City",
+        lbl_weight: "Current Weight",
+        lbl_goal: "What is your main goal?",
+        opt_goal_0: "Choose your goal...",
+        opt_goal_1: "Improve general health & activity",
+        opt_goal_2: "Get rid of obesity",
+        opt_goal_3: "Learn a healthy lifestyle",
+        lbl_health: "Do you suffer from any health issues?",
+        opt_health_0: "Choose condition...",
+        opt_health_1: "No, I am in good health",
+        opt_health_2: "Insulin Resistance / Diabetes",
+        opt_health_3: "Fatty Liver",
+        opt_health_4: "Other diseases",
+        btn_submit: "Send Your Details Now",
+        cta_title: "Your decision today could change your life for years",
+        cta_desc: "Don't delay your health. Every day that passes is a missed opportunity to feel more energetic. Our team is waiting for you.",
+        cta_btn: "Contact Us Now",
+        footer_rights: "© 2026 Food & Wellness. All rights reserved.",
+        wa_template: `Hello Food & Wellness team, I want to evaluate my condition to join the program.\nDetails:\n👤 Name: {name}\n📅 Age: {age} years\n📍 City: {city}\n⚖️ Weight: {weight} kg\n🎯 Goal: {goal}\n🩺 Health Status: {health}\nWaiting for your reply, thanks.`
+      },
+      fr: {
+        page_title: "Alimentation & Bien-être | Retrouvez Santé et Confiance",
+        hero_badge: "Alimentation & Bien-être",
+        hero_title: "Retrouvez votre santé et votre confiance avec <span class='text-gold'>Alimentation & Bien-être</span>",
+        hero_desc: "Un programme intégré pour vous aider à perdre du poids et améliorer votre santé avec un suivi quotidien et une communauté pour réussir.",
+        hero_btn: "Commencez via WhatsApp",
+        hero_note: "Obtenez votre consultation",
+        pain_title: "Est-ce que cela vous décrit ?",
+        pain1_t: "Tentatives Échouées",
+        pain1_d: "Vous avez essayé de nombreux régimes, perdu du poids, puis repris car vous n'avez pas pu continuer.",
+        pain2_t: "Fatigue Constante",
+        pain2_d: "Vous vous réveillez fatigué, perdez de l'énergie en milieu de journée, vous empêchant de profiter.",
+        pain3_t: "Peur des Complications",
+        pain3_d: "Inquiet pour le diabète, foie gras, résistance à l'insuline et l'impact du poids sur votre avenir.",
+        pain4_t: "Perte de Confiance",
+        pain4_d: "Vous évitez les événements sociaux et avez du mal à trouver des vêtements qui vous plaisent.",
+        pain5_t: "Désir de Changement",
+        pain5_d: "Vous voulez vraiment améliorer votre santé, mais vous ne savez pas par où ni comment commencer.",
+        pain6_t: "Besoin de Soutien",
+        pain6_d: "Vous savez que vous pouvez réussir si quelqu'un vous guide quotidiennement et vous soutient.",
+        quote_title: "Vous n'avez pas besoin d'un <span class='text-red-500 line-through decoration-2'>nouveau régime</span>.<br />Vous avez besoin d'un <span class='text-gradient'>système pour continuer</span>.",
+        quote_p1: "Pourquoi la plupart des pertes de poids échouent ? Le problème n'est pas votre manque de volonté.",
+        quote_p2: "Le vrai problème est d'essayer <span class='text-primary'>seul</span> dans un environnement non favorable.",
+        quote_p3: "C'est exactement pourquoi nous avons fondé <strong class='text-primary'>Alimentation & Bien-être</strong>. Pour vous offrir l'environnement et le soutien quotidien.",
+        how_title: "Comment ça marche ?",
+        how1_t: "Évaluation",
+        how1_d: "Nous étudions votre état de santé, vos objectifs et votre mode de vie avec précision.",
+        how2_t: "Plan Personnalisé",
+        how2_d: "Nous concevons un régime intégrant la nourriture marocaine que vous aimez sans privation.",
+        how3_t: "Suivi Quotidien",
+        how3_d: "Communication quotidienne via WhatsApp pour corriger les erreurs et vous motiver.",
+        how4_t: "Communauté de Soutien",
+        how4_d: "Rejoignez un groupe de personnes vivant la même expérience pour partager.",
+        how5_t: "Suivi des Progrès",
+        how5_d: "Mises à jour hebdomadaires et ajustements du plan en fonction de votre corps.",
+        how6_t: "Résultats Durables",
+        how6_d: "Apprenez un mode de vie qui vous aide à maintenir votre santé pour toujours.",
+        success_title: "Histoires de Réussite",
+        success_desc: "Écoutez de vraies expériences de personnes qui ont changé leur vie avec nous",
+        story1_name: "Fatima Ezzahra",
+        story1_city: "Casablanca",
+        before: "Avant",
+        after: "Après",
+        story1_before: "Léthargie & Résistance insuline",
+        story1_after: "Excellente santé & Activité",
+        story2_name: "Ahmed",
+        story2_city: "Rabat",
+        story2_before: "Obésité & Problèmes de mobilité",
+        story2_after: "Forme & Confiance en soi",
+        transform_title: "Transformations Incroyables",
+        trans1_t: "Confiance & Énergie Retrouvées",
+        trans1_d: "Après avoir souffert de léthargie, le mouvement fait partie de sa journée et elle a retrouvé confiance.",
+        trans2_t: "Fin de la Résistance à l'insuline",
+        trans2_d: "Un changement radical de mode de vie, de meilleures habitudes et d'excellents marqueurs de santé.",
+        trans3_t: "Haute Vitalité & Forme",
+        trans3_d: "Un succès couronné par la réduction des problèmes d'obésité et le retour de la vitalité.",
+        why_us: "Pourquoi tout le monde nous choisit ?",
+        feat1: "Longue Expérience",
+        feat2: "Suivi Quotidien",
+        feat3: "Communauté",
+        feat4: "Soutien Continu",
+        feat5: "Histoires de Réussite",
+        feat6: "Solutions Sur Mesure",
+        food_title: "Pas besoin d'abandonner la <span class='text-gold border-b-2 border-gold'>Cuisine Marocaine</span>",
+        food_p1: "Le secret n'est pas la privation, mais savoir comment et quand manger vos plats préférés.",
+        food_i1_t: "Tajine, Zaalouk, Grillades",
+        food_i1_d: "Nous vous apprendrons à les manger de manière saine et en bonnes portions.",
+        food_i2_t: "Petit-déjeuner Marocain",
+        food_i2_d: "Des alternatives intelligentes pour profiter d'une matinée saine.",
+        test1_d: "\"Je n'aurais jamais imaginé changer ma vie ainsi sans avoir faim. Le soutien quotidien a fait toute la différence.\"",
+        test1_n: "Sanaa - Marrakech",
+        test2_d: "\"Je souffrais de fatigue à cause de la résistance à l'insuline. Avec vous, j'ai retrouvé toute mon énergie.\"",
+        test2_n: "Yassine - Tanger",
+        faq_title: "Questions Fréquemment Posées",
+        q1: "Vais-je avoir faim ?",
+        a1: "Le programme est conçu pour fournir des repas nutritifs et rassasiants adaptés à vous.",
+        q2: "Est-ce adapté aux diabétiques ?",
+        a2: "Chaque cas est traité selon son état. Un avis médical est conseillé pour le diabète.",
+        q3: "Est-ce pour hommes et femmes ?",
+        a3: "Oui, le plan est personnalisé pour s'adapter à la nature et aux objectifs de chacun.",
+        q4: "Y a-t-il un suivi quotidien ?",
+        a4: "Oui, nous communiquons avec vous quotidiennement via WhatsApp pour vous guider.",
+        q5: "Y a-t-il une communauté de soutien ?",
+        a5: "Oui, vous rejoindrez un groupe dédié pour échanger des encouragements et des conseils.",
+        q6: "Comment commencer ?",
+        a6: "Remplissez le formulaire ci-dessous et vous serez redirigé vers WhatsApp.",
+        form_title: "Votre Premier Pas Vers le Changement",
+        form_desc: "Entrez vos informations de base et nous vous contacterons.",
+        lbl_name: "Nom Complet",
+        lbl_age: "Âge",
+        lbl_city: "Ville",
+        lbl_weight: "Poids Actuel",
+        lbl_goal: "Quel est votre objectif principal ?",
+        opt_goal_0: "Choisissez votre objectif...",
+        opt_goal_1: "Améliorer la santé générale",
+        opt_goal_2: "Se débarrasser de l'obésité",
+        opt_goal_3: "Apprendre un mode de vie sain",
+        lbl_health: "Souffrez-vous de problèmes de santé ?",
+        opt_health_0: "Choisissez la condition...",
+        opt_health_1: "Non, je suis en bonne santé",
+        opt_health_2: "Résistance Insuline / Diabète",
+        opt_health_3: "Foie Gras",
+        opt_health_4: "Autres maladies",
+        btn_submit: "Envoyer vos données maintenant",
+        cta_title: "Votre décision aujourd'hui peut changer votre vie",
+        cta_desc: "Ne retardez pas votre santé. Chaque jour qui passe est une occasion manquée. Notre équipe vous attend.",
+        cta_btn: "Contactez-nous Maintenant",
+        footer_rights: "© 2026 Alimentation & Bien-être. Tous droits réservés.",
+        wa_template: `Bonjour l'équipe, je souhaite évaluer ma condition pour rejoindre le programme.\nDétails:\n👤 Nom: {name}\n📅 Âge: {age} ans\n📍 Ville: {city}\n⚖️ Poids: {weight} kg\n🎯 Objectif: {goal}\n🩺 Santé: {health}\nDans l'attente de votre réponse, merci.`
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+
+      // Update HTML attributes
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+      // Update all elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+          el.innerHTML = t[key];
+        }
+      });
+
+      // Reset accordion icons direction fix if needed
+      document.querySelectorAll('.faq-btn i').forEach(function (el) {
+        el.style.transform = 'rotate(0deg)';
+      });
+      document.querySelectorAll('.accordion-content').forEach(function (el) {
+        el.style.maxHeight = null;
+      });
+    }
+
+    // دالة لتحويل الأرقام العربية إلى إنجليزية لتمرير التقييم بنجاح
+    function convertToArabicAndEnglishLive(e) {
+      const arabicNumbers = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+      let val = e.target.value;
+      for (let i = 0; i < 10; i++) {
+          val = val.replace(arabicNumbers[i], i);
+      }
+      // إزالة أي رموز أو حروف (الإبقاء فقط على الأرقام الإنجليزية)
+      e.target.value = val.replace(/[^0-9]/g, '');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Setup Language Switcher
+      const langSelector = document.getElementById('langSelector');
+      langSelector.addEventListener('change', (e) => {
+        changeLanguage(e.target.value);
+      });
+
+      // إرفاق دالة تحويل الأرقام بحقول العمر والوزن
+      const numberInputs = ['wa-age', 'wa-weight'];
+      numberInputs.forEach(id => {
+          const input = document.getElementById(id);
+          if (input) {
+              input.addEventListener('input', convertToArabicAndEnglishLive);
+          }
+      });
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-up').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      document.querySelectorAll('.faq-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector('i');
+          const isOpen = content.style.maxHeight;
+          document.querySelectorAll('.accordion-content').forEach(function (el) {
+            el.style.maxHeight = null;
+          });
+          document.querySelectorAll('.faq-btn i').forEach(function (el) {
+            el.style.transform = 'rotate(0deg)';
+          });
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      const leadForm = document.getElementById('leadForm');
+      if (leadForm) {
+        leadForm.addEventListener('submit', sendToWhatsApp);
+      }
+    });
+
+    let currentTestimonial = 0;
+    function nextTestimonial() {
+      const testimonials = document.querySelectorAll('.carousel-item');
+      if (!testimonials.length) return;
+      testimonials[currentTestimonial].classList.remove('active');
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].classList.add('active');
+    }
+    setInterval(nextTestimonial, 5000);
+
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('wa-name').value;
+      const age = document.getElementById('wa-age').value;
+      const city = document.getElementById('wa-city').value;
+      const weight = document.getElementById('wa-weight').value;
+      
+      const goalEl = document.getElementById('wa-goal');
+      const goal = goalEl.options[goalEl.selectedIndex].text;
+      
+      const healthEl = document.getElementById('wa-health');
+      const health = healthEl.options[healthEl.selectedIndex].text;
+
+      // Get translation template
+      let messageTemplate = translations[currentLang].wa_template;
+      
+      // Replace placeholders
+      let message = messageTemplate
+        .replace('{name}', name)
+        .replace('{age}', age)
+        .replace('{city}', city)
+        .replace('{weight}', weight)
+        .replace('{goal}', goal)
+        .replace('{health}', health);
+
+      const phoneNumber = '971547166664';
+      const url = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
+
+
+```
